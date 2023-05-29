@@ -1,0 +1,47 @@
+.row{
+    display: flex;
+}
+
+.row-button{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 45px;
+}
+
+.column{
+    margin-bottom: 70px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.column-button{
+    margin-left: 10px;
+    justify-content: flex-end;
+}
+
+.save-button:enabled{
+    background-color: #4472c4;
+    color: white;
+}
+
+.save-button:disabled{
+    background-color: #4472c477;
+    color: white;
+}
+
+.cancel-button{
+    background-color: #ff0000;
+    color: white;
+}
+
+.mat-input-large{
+    width: 350px;
+}
+
+.mat-input-xlarge{
+    width: 550px;
+}
+
+.container-hidden{
+    overflow: hidden;
+}

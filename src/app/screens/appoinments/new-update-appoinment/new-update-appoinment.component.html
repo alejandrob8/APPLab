@@ -1,0 +1,56 @@
+<div class="container-hidden">
+    <app-screen-header [title]="'Citas ─ ' + actionTitle + ' cita'"></app-screen-header>
+    <form [formGroup]="form" (ngSubmit)="newUpdateAppoinment()">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <mat-form-field>
+                        <mat-label>Fecha</mat-label>
+                        <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Seleccione fecha">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="column">
+                    <mat-form-field>
+                        <mat-label>Hora</mat-label>
+                        <input matInput formControlName="hour" name="selected_time" [format]="12"
+                            [ngxMatTimepicker]="pickerHour" placeholder="Seleccione Hora" readonly />
+                        <ngx-mat-timepicker-toggle matSuffix [for]="pickerHour"></ngx-mat-timepicker-toggle>
+                    </mat-form-field>
+                    <ngx-mat-timepicker color="primary" #pickerHour></ngx-mat-timepicker>
+                </div>
+                <div class="column" formGroupName="idTest">
+                    <mat-form-field>
+                        <mat-label>Id Prueba</mat-label>
+                        <mat-select formControlName="id">
+                            <mat-option *ngFor="let tests of tests" [value]="tests.id">
+                                {{tests.id}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="column" formGroupName="idAffiliate">
+                    <mat-form-field>
+                        <mat-label>Id Afiliado</mat-label>
+                        <mat-select formControlName="id">
+                            <mat-option *ngFor="let affiliates of affiliates" [value]="affiliates.id">
+                                {{affiliates.id}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row-button">
+                <div class="column-button">
+                    <button [disabled]="form.invalid" type="submit" mat-raised-button
+                        class="save-button">GUARDAR</button>
+                </div>
+                <div class="column-button">
+                    <button type="button" mat-raised-button class="cancel-button"
+                        routerLink="/dashboard/citas">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

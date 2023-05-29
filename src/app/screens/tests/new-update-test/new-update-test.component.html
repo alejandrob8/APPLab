@@ -1,0 +1,31 @@
+<div class="container-hidden">
+    <app-screen-header [title]="'Pruebas ─ ' + actionTitle + ' prueba'"></app-screen-header>
+    <form [formGroup]="form" (ngSubmit)="newUpdateTest()">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <mat-form-field class="mat-input-large">
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="name" matInput placeholder="Ingrese nombre">
+                    </mat-form-field>
+                </div>
+                <div class="column">
+                    <mat-form-field class="mat-input-xlarge">
+                        <mat-label>Descripción</mat-label>
+                        <input formControlName="description" matInput placeholder="Ingrese descripción">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row-button">
+                <div class="column-button">
+                    <button [disabled]="form.invalid" type="submit" mat-raised-button
+                        class="save-button">GUARDAR</button>
+                </div>
+                <div class="column-button">
+                    <button type="button" mat-raised-button class="cancel-button"
+                        routerLink="/dashboard/pruebas">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

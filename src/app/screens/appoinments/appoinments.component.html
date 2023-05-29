@@ -1,0 +1,52 @@
+<app-screen-header [title] = "'Citas'"></app-screen-header>
+<app-add-button [buttonLabel] = "'Nueva Cita'" [pathLink] = "'nueva'" (buttonClicked)="eventButtonClicked()"></app-add-button>
+<div class="container">
+    <table mat-table [dataSource]="appoinments" class="mat-elevation-z10">
+      
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id Cita </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.date }} </td>
+        </ng-container>
+      
+        <!-- Hour Column -->
+        <ng-container matColumnDef="hour">
+          <th mat-header-cell *matHeaderCellDef> Hora </th>
+          <td mat-cell *matCellDef="let element"> {{element.hour}} </td>
+        </ng-container>
+      
+        <!-- Id Test Column -->
+        <ng-container matColumnDef="idTest">
+          <th mat-header-cell *matHeaderCellDef> Id Test </th>
+          <td mat-cell *matCellDef="let element"> {{element.idTest.id}} </td>
+        </ng-container>
+
+        <!-- Id Afiliado Column -->
+        <ng-container matColumnDef="idAffiliate">
+          <th mat-header-cell *matHeaderCellDef> Id Affiliate </th>
+          <td mat-cell *matCellDef="let element"> {{element.idAffiliate.id}} </td>
+        </ng-container>
+
+        <!-- Opciones Column -->
+        <ng-container matColumnDef="opciones">
+          <th mat-header-cell *matHeaderCellDef> Opciones </th>
+          <td mat-cell *matCellDef="let element" class="options-colum">
+            <a class="icon-pointer" matTooltip="Actualizar" [routerLink] = "'actualizar'">
+              <mat-icon (click)="appoinmentToUpdate(element.id)">update</mat-icon>
+            </a>
+            <a class="icon-pointer" matTooltip="Eliminar">
+              <mat-icon (click)="appoinmentToDelete(element.id)" class="mat-icon-no-fill">delete</mat-icon>
+            </a>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>

@@ -1,0 +1,22 @@
+.mat-toolbar{
+    background-color: #4472c4;
+    color: #ffffff;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.mat-button-spacer{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.material-icons.md-30 { 
+    font-size: 28px;
+    margin-right: 5px; 
+}

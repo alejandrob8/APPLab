@@ -1,0 +1,33 @@
+<app-screen-header [title] = "'Afiliados ─ ' + actionTitle + ' afiliado'"></app-screen-header>
+<form [formGroup]="form" (ngSubmit)="newUpdateAffiliate()">
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <mat-form-field class="mat-input-large">
+                    <mat-label>Nombre</mat-label>
+                    <input formControlName="name" matInput placeholder="Ingrese nombre">
+                  </mat-form-field>
+            </div>
+            <div class="column" >
+                <mat-form-field class="mat-input-small">
+                    <mat-label>Edad</mat-label>
+                    <input type="number" min="0" max="120" formControlName="age" matInput placeholder="Ingrese edad">
+                  </mat-form-field>
+            </div>
+            <div class="column" >
+                <mat-form-field class="mat-input-large">
+                    <mat-label>Correo</mat-label>
+                    <input formControlName="mail" matInput placeholder="Ingrese correo">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row-button">
+            <div class="column-button">
+                <button [disabled]="form.invalid" type="submit" mat-raised-button class="save-button">GUARDAR</button>
+            </div>
+            <div class="column-button">
+                <button type="button" mat-raised-button class="cancel-button" routerLink="/dashboard/afiliados">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</form>

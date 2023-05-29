@@ -1,0 +1,14 @@
+.mat-button-spacer{
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+.material-icons.md-26  { 
+    font-size: 26px;
+    margin-right: 5px;
+}
+
+.button-position {
+    display: flex;
+    justify-content: flex-end;
+}

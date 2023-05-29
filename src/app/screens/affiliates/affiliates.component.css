@@ -1,0 +1,9 @@
+.icon-pointer{
+    cursor: pointer;
+}
+
+.options-colum{
+    flex: 1 0 auto;
+    flex-direction: row-reverse;
+    width: 130px;
+}
